@@ -7,6 +7,7 @@ import org.example.demo.ticket.business.ManagerFactory;
 import org.example.demo.ticket.business.ManagerFactoryImpl;
 import org.example.demo.ticket.model.exception.TechnicalException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -28,7 +29,7 @@ public class Main {
      * @throws TechnicalException sur erreur technique
      */
     public static void main(String[] pArgs) throws TechnicalException {
-    	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+    	ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
     	
     	ManagerFactory managerFactory = applicationContext.getBean("managerFactory", ManagerFactoryImpl.class);
     	
