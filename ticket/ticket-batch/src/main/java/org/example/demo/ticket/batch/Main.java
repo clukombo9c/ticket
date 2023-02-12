@@ -4,7 +4,7 @@ package org.example.demo.ticket.batch;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.example.demo.ticket.business.ManagerFactory;
-import org.example.demo.ticket.business.ManagerFactoryImpl;
+import org.example.demo.ticket.business.impl.ManagerFactoryImpl;
 import org.example.demo.ticket.model.exception.TechnicalException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -29,7 +29,7 @@ public class Main {
      * @throws TechnicalException sur erreur technique
      */
     public static void main(String[] pArgs) throws TechnicalException {
-    	ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+    	ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
     	
     	ManagerFactory managerFactory = applicationContext.getBean("managerFactory", ManagerFactoryImpl.class);
     	

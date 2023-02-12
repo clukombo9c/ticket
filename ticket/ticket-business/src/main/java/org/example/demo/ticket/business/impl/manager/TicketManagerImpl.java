@@ -21,7 +21,7 @@ import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
  * @author lgu
  */
 @Named
-public class TicketManagerImpl implements TicketManager {
+public class TicketManagerImpl extends AbstractManager implements TicketManager {
 
     /**
      * Cherche et renvoie le {@link Ticket} numéro {@code pNumero}
